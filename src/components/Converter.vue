@@ -1,9 +1,11 @@
 <template>
-    <div class="converter col-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+    <div class="converter col-12 col-md-8 m-auto">
         <div class="box">
-            <h2>{{moedaB}} para {{moedaA}}</h2>
-            <p><input type="number" id="moeda-a" v-model="moedaA_value" v-bind:placeholder="moedaA">
-            <p><button type="button" v-on:click="converter">Converter</button></p>
+            <h2>{{moedaC}} para {{moedaA}}</h2>
+            <p>
+                <input type="number" id="moeda-a" v-model="moedaA_value" v-bind:placeholder="moedaA">
+                <button type="button" v-on:click="converter">Converter</button>
+            </p>
             <h3>Resultado: {{moedaB_value}}</h3>
         </div>
     </div>
@@ -11,7 +13,7 @@
 
 <script>
 export default {
-    props: [ "moedaA" , "moedaB" ],
+    props: [ "moedaA" , "moedaC" ],
 
     data(){
         return{
@@ -64,7 +66,6 @@ input{
 
 .box{
     margin: 15px 0;
-    background: rgb(236, 236, 236);
     border: 1px solid var(--border);
     border-radius: 5px;
     padding: 10px 0;
@@ -76,5 +77,6 @@ button{
     outline: none;
     background: rgb(7, 0, 71);
     color: white;
+    margin-left: 20px;
 }
 </style>
