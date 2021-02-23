@@ -12,9 +12,6 @@
       </section>
       <section class="row" id="coinsConverter">
         <Converter moeda-a = "BRL" moeda-b = "USD"/>
-        <Converter moeda-a = "BRL" moeda-b = "CAD"/>
-        <Converter moeda-a = "BRL" moeda-b = "EUR"/>
-        <Converter moeda-a = "BRL" moeda-b = "BTC"/>
       </section>
     </main>
   </div>
