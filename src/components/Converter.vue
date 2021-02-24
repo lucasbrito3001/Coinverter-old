@@ -76,12 +76,11 @@ input{
 #moeda-a{
     text-align: center;
     border: none;
-    background: var(--inputmoeda);
+    border-bottom: 3px solid var(--result);
     font-size: 1.2rem;
-    color: var(--result);
-    box-shadow: .8px .8px 2px gray;
-    width: 170px;
-    margin-left: 2px;
+    color: rgb(82, 82, 82);
+    width: 150px;
+    margin-left: 10px;
 }
 
 .box{
@@ -92,18 +91,17 @@ input{
 
 .box h2 img{
     width: 10px;
-    margin-left: 2px;
+    margin-left: 10px;
 }
 
 #res {
-    color: var(--result);
-    border: 1px solid var(--border);
-    background: var(--inputmoeda);
-    max-width: 90%;
+    color: rgb(82, 82, 82);
+    border-bottom: 3px solid var(--result);
+    width: fit-content;
     padding: 5px 0;
     box-sizing: border-box;
     margin: auto;
-    box-shadow: .5px .5px 2px gray;
+    font-size: 1.3rem;
 }
 
 .currency {
