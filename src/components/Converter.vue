@@ -1,7 +1,7 @@
 <template>
     <div class="converter col-12 col-md-8 m-auto">
         <div class="box">
-            <h2><span class="currency">{{moedaC}}</span> para <span class="currency">{{moedaA}}</span><input type="number" id="moeda-a" v-model="valueA" v-bind:placeholder="moedaC"></h2>
+            <h2><span class="currency">{{moedaC}}</span> para <span class="currency">{{moedaA}}</span> <img src="../assets/setas.svg" alt=""> <input type="number" id="moeda-a" v-model="valueA" v-bind:placeholder="moedaC"></h2>
             
             <h3 id="res">
                 {{inputA}} {{moedaC}} = {{valueC}} {{moedaA}}
@@ -77,11 +77,11 @@ input{
     text-align: center;
     border: none;
     background: var(--inputmoeda);
-    border-radius: 2px;
+    font-size: 1.2rem;
     color: var(--result);
-    box-shadow: .5px .5px 2px gray;
+    box-shadow: .8px .8px 2px gray;
     width: 200px;
-    margin-left: 15px;
+    margin-left: 2px;
 }
 
 .box{
@@ -90,13 +90,9 @@ input{
     padding: 10px 0;
 }
 
-button{
-    border-radius: 5px;
-    border: .5px solid #ddd;
-    outline: none;
-    background: var(--result);
-    color: white;
-    margin-left: 20px;
+.box h2 img{
+    width: 10px;
+    margin-left: 2px;
 }
 
 #res {
@@ -107,7 +103,7 @@ button{
     padding: 5px 0;
     box-sizing: border-box;
     margin: auto;
-
+    box-shadow: .5px .5px 2px gray;
 }
 
 .currency {
