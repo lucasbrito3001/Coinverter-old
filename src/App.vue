@@ -11,14 +11,15 @@
         <Quotes moeda-a = "BRL" moeda-b = "CHF"/>
       </section>
       <section class="row" id="coinsConverter">
-        <Converter moeda-a = "BRL" v-bind:moeda-c="moeda"/>
+        <Converter moeda-a = "BRL" v-bind:moeda-c="moeda" moeda-a_value = "1" moeda-c_value = "0" input-moeda-a = ""/>
       </section>
       <section class="row" id="buttons">
-        <Button moeda = "USD"></Button>
-        <Button moeda = "EUR"></Button>
-        <Button moeda = "BTC"></Button>
-        <Button moeda = "CAD"></Button>
-        <Button moeda = "CHF"></Button>
+        <Button moeda = "USD" @change="moeda = 'USD'"></Button>
+        <Button moeda = "EUR" @change="moeda = 'EUR'"></Button>
+        <Button moeda = "BTC" @change="moeda = 'BTC'"></Button>
+        <Button moeda = "CAD" @change="moeda = 'CAD'"></Button>
+        <Button moeda = "CHF" @change="moeda = 'CHF'"></Button>
+        <Button moeda = "GBP" @change="moeda = 'GBP'"></Button>
       </section>
     </main>
   </div>
@@ -45,12 +46,6 @@ export default {
     Quotes,
     Converter,
     Button
-  },
-
-  methods: {
-    changeMoedaC(){
-      alert('enter')
-    }
   }
 }
 </script>
@@ -59,6 +54,9 @@ export default {
 
 :root {
   --border: #cfcfcf;
+  --result: rgb(9, 11, 78);
+  --currency: rgb(6, 51, 175);
+  --inputmoeda: rgb(222, 222, 223);
 }
 
 *{
@@ -70,7 +68,7 @@ export default {
   border: .08rem solid var(--border);
   border-radius: .2rem;
   padding: .6rem;
-  margin-top: 2vh;
+  margin: 15vh .5px 0 .5px;
 }
 
 #coinsConverter{

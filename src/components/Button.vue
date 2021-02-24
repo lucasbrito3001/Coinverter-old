@@ -1,10 +1,16 @@
 <template>
-    <button type="button" class="btn-primary">{{moeda}} para BRL</button>    
+    <button type="button" class="btn-primary" v-on:click="changeCurrency">{{moeda}} para BRL</button>   
 </template>
 
 <script>
 export default {
-    props: ["moeda"]
+    props: ["moeda"],
+    
+    methods: {
+        changeCurrency(){
+            this.$emit('change')
+        }
+    }
 }
 </script>
 
