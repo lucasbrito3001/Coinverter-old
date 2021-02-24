@@ -1,8 +1,8 @@
 <template>
     <div class="converter col-12 col-md-8 m-auto">
         <div class="box">
+            <img v-bind:src="require(`../assets/${moedaC}.png`)" alt="#" id="imgConverter"/>
             <h2><span class="currency">{{moedaC}}</span> para <span class="currency">{{moedaA}}</span> <img src="../assets/setas.svg" alt=""/> <input type="number" id="moeda-a" v-model="valueA" v-bind:placeholder="moedaC"></h2>
-            
             <h3 id="res">
                 {{inputA}} {{moedaC}} = {{valueC}} {{moedaA}}
             </h3>
@@ -31,7 +31,6 @@ export default {
                 this.cotacao = data[this.moedaC].bid
                 this.valueC = (this.valueA * this.cotacao).toFixed(2)
                 this.inputA = this.valueA
-
             } catch (error) {
                 console.log('[ERRO]')
             }
@@ -102,6 +101,10 @@ input{
     box-sizing: border-box;
     margin: auto;
     font-size: 1.3rem;
+}
+
+#imgConverter{
+    margin-bottom: 4.5vh;
 }
 
 .currency {

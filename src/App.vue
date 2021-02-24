@@ -118,7 +118,7 @@ main{
 }
 
 #coinsConverter{
-  margin-top: 9vh;
+  margin-top: 4.5vh;
 }
 
 #buttons{
