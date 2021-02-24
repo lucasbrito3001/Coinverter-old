@@ -72,7 +72,7 @@ export default {
 }
 
 #coinsConverter{
-  margin-top: 8vh;
+  margin-top: 11vh;
 }
 
 #buttons{
