@@ -1,4 +1,4 @@
-# api-vue
+# Coinverter - Conversor de Moedas
 
 ## Project setup
 ```
