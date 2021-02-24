@@ -1,7 +1,7 @@
 <template>
     <div class="converter col-12 col-md-8 m-auto">
         <div class="box">
-            <h2><span class="currency">{{moedaC}}</span> para <span class="currency">{{moedaA}}</span> <img src="../assets/setas.svg" alt=""> <input type="number" id="moeda-a" v-model="valueA" v-bind:placeholder="moedaC"></h2>
+            <h2><span class="currency">{{moedaC}}</span> para <span class="currency">{{moedaA}}</span> <img src="../assets/setas.svg" alt=""/> <input type="number" id="moeda-a" v-model="valueA" v-bind:placeholder="moedaC"></h2>
             
             <h3 id="res">
                 {{inputA}} {{moedaC}} = {{valueC}} {{moedaA}}
@@ -80,7 +80,7 @@ input{
     font-size: 1.2rem;
     color: var(--result);
     box-shadow: .8px .8px 2px gray;
-    width: 200px;
+    width: 170px;
     margin-left: 2px;
 }
 
@@ -99,7 +99,7 @@ input{
     color: var(--result);
     border: 1px solid var(--border);
     background: var(--inputmoeda);
-    max-width: 100%;
+    max-width: 90%;
     padding: 5px 0;
     box-sizing: border-box;
     margin: auto;

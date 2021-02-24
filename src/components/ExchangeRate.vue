@@ -1,6 +1,6 @@
 <template>
     <div class="quotes col-4 col-sm-4 col-md-4 col-lg-2 col-xl-2">
-        <span>{{moedaB}} &rarr; <span v-bind:class="moedaB">{{cotacao}}%</span></span>
+        <span>{{moedaB}} : <span v-bind:class="moedaB">{{cotacao}}%</span></span>
     </div>
 </template>
 
