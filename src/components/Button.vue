@@ -15,6 +15,11 @@ export default {
 </script>
 
 <style scoped>
+button{
+    outline: none;
+    border: none;
+}
+
 .btn-primary{
     border: none;
     margin: 10px;
