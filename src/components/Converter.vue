@@ -38,12 +38,6 @@ export default {
     },
 
     methods:{
-        converter(){
-        },
-
-        resetValue(){
-            this.valueC = ''
-        }
     }
     
 }

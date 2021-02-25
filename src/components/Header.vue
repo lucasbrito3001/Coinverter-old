@@ -7,9 +7,9 @@
             </button>
             <div id="navbarCollapsible" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link" href="#table">Tabela de Cotações</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Conversor de Moedas</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Notícias Relevantes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Tabela de Cotações</a></li>
                     <li class="nav-item"><a class="nav-link" href="#">Bitcoin</a></li>
                 </ul>
                 

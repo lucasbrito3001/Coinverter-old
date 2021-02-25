@@ -24,6 +24,7 @@
         <Converter moeda-a = "BRL" v-bind:moeda-c="moeda" moeda-a_value = "1" moeda-c_value = "0" input-moeda-a = ""/>
       </section>
       <section class="row" id="buttons">
+        <h3 class="col-12">Mais Opções de Conversão</h3>
         <Button moeda = "USD" @change="moeda = 'USD'"></Button>
         <Button moeda = "EUR" @change="moeda = 'EUR'"></Button>
         <Button moeda = "BTC" @change="moeda = 'BTC'"></Button>
@@ -32,6 +33,11 @@
         <Button moeda = "GBP" @change="moeda = 'GBP'"></Button>
       </section>
     </main>
+    <aside class="container">
+      <section class="row" id="table">
+        <CurrencyTable/>
+      </section>
+    </aside>
   </div>
 </template>
 
@@ -41,6 +47,7 @@ import Converter from "./components/Converter.vue"
 import Header from "./components/Header.vue"
 import ExchangeRate from "./components/ExchangeRate.vue"
 import Button from "./components/Button.vue"
+import CurrencyTable from "./components/CurrencyTable.vue"
 
 export default {
   name: 'App',
@@ -55,7 +62,8 @@ export default {
     Header,
     ExchangeRate,
     Converter,
-    Button
+    Button,
+    CurrencyTable
   }
 }
 </script>
@@ -69,13 +77,20 @@ export default {
   --inputmoeda: rgb(231, 231, 241);
 }
 
+html,body{
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
 *{
   font-family: 'Ubuntu', sans-serif;
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 main{
-  height: 88vh;
+  min-height: 88vh;
   margin-top: 12.5vh;
   box-sizing: border-box;
 }
@@ -126,6 +141,16 @@ main{
   justify-content: space-evenly;
   max-width: 800px;
   margin: auto;
+}
+
+#buttons h3{
+  font-size: .9rem;
+  font-weight: normal;
+}
+
+#table{
+  box-sizing: border-box;
+  padding: 0;
 }
 
 @media (max-width:992px) {
