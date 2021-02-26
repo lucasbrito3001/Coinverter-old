@@ -34,12 +34,8 @@ export default {
             } catch (error) {
                 console.log('[ERRO]')
             }
-        }, 100);
-    },
-
-    methods:{
+        }, 500);
     }
-    
 }
 </script>
 
