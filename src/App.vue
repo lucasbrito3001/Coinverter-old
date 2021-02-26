@@ -155,12 +155,14 @@ main{
   display: flex;
   justify-content: space-evenly;
   max-width: 800px;
-  margin: auto;
+  margin: 2vh auto;
 }
 
 #buttons h3{
   font-size: .9rem;
   font-weight: normal;
+  width: fit-content;
+  border-bottom: 1px solid var(--border);
 }
 
 #table{
