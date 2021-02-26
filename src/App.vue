@@ -37,6 +37,15 @@
       <section class="row" id="table">
         <CurrencyTable/>
       </section>
+      <section class="row" id="aboutConverter">
+        <AboutConverter/>
+      </section>
+      <section id="news">
+        <News/>
+      </section>
+      <section id="aboutBitcoin">
+        <AboutBitcoin/>
+      </section>
     </aside>
   </div>
 </template>
@@ -48,6 +57,9 @@ import Header from "./components/Header.vue"
 import ExchangeRate from "./components/ExchangeRate.vue"
 import Button from "./components/Button.vue"
 import CurrencyTable from "./components/CurrencyTable.vue"
+import AboutConverter from "./components/AboutConverter.vue"
+import News from "./components/News.vue"
+import AboutBitcoin from "./components/AboutBitcoin.vue"
 
 export default {
   name: 'App',
@@ -63,7 +75,10 @@ export default {
     ExchangeRate,
     Converter,
     Button,
-    CurrencyTable
+    CurrencyTable,
+    AboutConverter,
+    News,
+    AboutBitcoin
   }
 }
 </script>

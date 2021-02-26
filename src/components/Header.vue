@@ -8,9 +8,9 @@
             <div id="navbarCollapsible" class="collapse navbar-collapse">
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#table">Tabela de Cotações</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Conversor de Moedas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Notícias Relevantes</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#">Bitcoin</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutConverter">Conversor de Moedas</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#news">Notícias Relevantes</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#aboutBitcoin">Bitcoin</a></li>
                 </ul>
                 
                 <ul class="navbar-nav ml-auto">
