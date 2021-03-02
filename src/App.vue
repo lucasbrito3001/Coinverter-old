@@ -1,7 +1,7 @@
 <template>
   <div id="app">
-    <Header class="container.fluid"/>
-    <main class="container">
+    <Header @darkmode="darkmode" class="container.fluid"/>
+    <main class="container"> 
       <section class="row" id="coinsQuotation">
         <p class="col-12">Alteração das Moedas em 24h</p>
         <ExchangeRate moeda-a = "BRL" moeda-b = "USD"/>
@@ -54,8 +54,8 @@
 <script>
 import Header from "./components/Header.vue"
 import ExchangeRate from "./components/ExchangeRate.vue"
-import Converter from "./components/Converter.vue"
 import Button from "./components/Button.vue"
+import Converter from "./components/Converter.vue"
 import CurrencyTable from "./components/CurrencyTable.vue"
 import AboutConverter from "./components/AboutConverter.vue"
 // import News from "./components/News.vue"

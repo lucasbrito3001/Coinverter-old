@@ -25,7 +25,29 @@
 
 <script>
 export default {
-    
+    methods: {
+        darkmode(){
+            const alternate = document.querySelector('.alternate')
+            const interruptor = document.querySelector('.on-off')
+            const text = document.querySelector('.text')
+            if(this.event == 'off'){
+                alternate.style.float = "right"
+                alternate.style.transition = "float .4s ease-out"
+                interruptor.style.background = "yellowgreen"
+                interruptor.style.border = "2px solid yellowgreen"
+                text.innerText = "On"
+                this.event = 'on'
+                this.$emit('darkmode')
+            } else{
+                alternate.style.float = "left"
+                interruptor.style.background = "red"
+                interruptor.style.border = "2px solid red"
+                text.innerText = "Off"
+                this.event = 'off'
+                this.$emit('darkmode')
+            }
+        }
+    }
 }
 </script>
 
