@@ -93,7 +93,7 @@ export default {
   --result: rgb(9, 11, 78);
   --currency: rgb(15, 9, 104);
   --inputmoeda: rgb(231, 231, 241);
-  --neutralText: white
+  --neutralText: black;
 }
 
 html,body{
@@ -112,6 +112,10 @@ main{
   min-height: 88vh;
   margin-top: 12.5vh;
   box-sizing: border-box;
+}
+
+h2,h3,p, td, footer, #quotes{
+  color: var(--neutralText);
 }
 
 #coinsQuotation{
