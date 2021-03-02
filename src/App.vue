@@ -40,13 +40,14 @@
       <section class="row" id="aboutConverter">
         <AboutConverter/>
       </section>
-      <section id="news">
+      <!-- <section id="news">
         <News/>
-      </section>
+      </section> -->
       <section id="aboutBitcoin">
         <AboutBitcoin/>
       </section>
     </aside>
+    <Footer class="container.fluid"/>
   </div>
 </template>
 
@@ -58,8 +59,9 @@ import ExchangeRate from "./components/ExchangeRate.vue"
 import Button from "./components/Button.vue"
 import CurrencyTable from "./components/CurrencyTable.vue"
 import AboutConverter from "./components/AboutConverter.vue"
-import News from "./components/News.vue"
+// import News from "./components/News.vue"
 import AboutBitcoin from "./components/AboutBitcoin.vue"
+import Footer from "./components/Footer.vue"
 
 export default {
   name: 'App',
@@ -77,8 +79,9 @@ export default {
     Button,
     CurrencyTable,
     AboutConverter,
-    News,
-    AboutBitcoin
+    // News,
+    AboutBitcoin,
+    Footer
   }
 }
 </script>
@@ -90,6 +93,7 @@ export default {
   --result: rgb(9, 11, 78);
   --currency: rgb(15, 9, 104);
   --inputmoeda: rgb(231, 231, 241);
+  --neutralText: white
 }
 
 html,body{

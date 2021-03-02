@@ -9,7 +9,7 @@
                 <ul class="navbar-nav">
                     <li class="nav-item"><a class="nav-link" href="#table">Tabela de Cotações</a></li>
                     <li class="nav-item"><a class="nav-link" href="#aboutConverter">Conversor de Moedas</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#news">Notícias Relevantes</a></li>
+                    <!-- <li class="nav-item"><a class="nav-link" href="#news">Notícias Relevantes</a></li> -->
                     <li class="nav-item"><a class="nav-link" href="#aboutBitcoin">Bitcoin</a></li>
                 </ul>
                 

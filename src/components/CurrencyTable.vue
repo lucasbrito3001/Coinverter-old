@@ -133,7 +133,16 @@ export default {
             const data = await response.json()
             let date = new Date()
 
-            this.attTable = `${date.getDate()}/${date.getUTCMonth() + 1} - ${date.getHours()}:${date.getMinutes()}`
+            let day = date.getDate()
+            day < 10 ? day = `0${day}` : day = `${day}`
+            let month = date.getMonth() + 1
+            month < 10 ? month = `0${month}` : month = `${month}`
+            let hours = date.getHours()
+            hours < 10 ? hours = `0${hours}` : hours = `${hours}`
+            let minutes = date.getMinutes()
+            minutes < 10 ? minutes = `0${minutes}` : minutes = `${minutes}`
+
+            this.attTable = `${day}/${month} - ${hours}:${minutes}`
             for(let coinInfo in this.nameCoins){
                 let coinCode = this.nameCoins[coinInfo]
 
