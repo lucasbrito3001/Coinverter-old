@@ -70,5 +70,28 @@ header{
     outline: .5px solid rgb(170, 170, 170);
 }
 
+/* INTERRUPTOR */
 
+.on-off{
+    padding: 0px;
+    position: relative;
+    display: inline-block;
+    width: 65px;
+    height: 25px;
+    background-color: red;
+    border-radius: 7px;
+    border: 2px solid red;
+    color: white;
+    line-height: 20px;
+}
+
+.alternate{
+    position: relative;
+    display: inline-block;
+    width: 50%;
+    height: 100%;
+    float: left;
+    background: white;
+    border-radius: 5px;
+}
 </style>
