@@ -15,7 +15,7 @@
                 
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a href="#" class="nav-link">Dark Mode</a>
+                        <a href="#" class="nav-link" v-on:click="darkmode">Dark Mode <span class="on-off"><span class="text">Off</span><span class="alternate"></span></span></a>
                     </li>
                 </ul>
             </div>
