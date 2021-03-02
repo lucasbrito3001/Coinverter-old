@@ -187,7 +187,7 @@ table{
 }
 
 thead{
-    background: var(--result);
+    background: var(--currency);
     color: white;
 }
 

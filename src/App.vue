@@ -67,23 +67,48 @@ export default {
 
   data(){
     return {
-      moeda: "USD"
+      moeda: "USD",
+      verify: 0
     }
   },
 
   methods: {
-    methods: {
       darkmode(){
+        event.preventDefault()
         if(this.verify == 0){
           document.body.style.setProperty('--neutralText','white')
-          document.body.style.backgroundColor = 'rgb(0,0,22)'
+          document.body.style.setProperty('--result','#606060')
+          document.body.style.setProperty('--currency','blue')
+          document.body.style.backgroundColor = 'rgb(0,0,5)'
+          document.body.querySelector('#coinCaption').style.color = "white"
+          for(let cont = 0; cont < 6; cont++){
+            document.body.querySelectorAll('.quotes')[cont].style.color = "white"
+            if(cont < 4){
+              document.body.querySelectorAll('.nav-link')[cont].style.color = "white"
+            }
+          }
+          document.body.querySelector('.navbar-brand').style.color = 'white'
+          document.body.querySelector('header').style.backgroundColor = 'rgb(0,0,20)'
+          document.body.querySelector('#navheader-toggler').style.backgroundColor = "rgba(255,255,255,.2)"
           this.verify = 1
+
+
         } else{
           document.body.style.setProperty('--neutralText','black')
+          document.body.style.setProperty('--result','rgb(9,11,78)')
+          document.body.style.setProperty('--currency','rgb(15,9,104)')
           document.body.style.backgroundColor = 'white'
+          document.body.querySelector('#coinCaption').style.color = "black"
+          for(let cont = 0; cont < 6; cont++){
+            document.body.querySelectorAll('.quotes')[cont].style.color = "black"
+            if(cont < 4){
+              document.body.querySelectorAll('.nav-link')[cont].style.color = "rgba(0,0,0,.65)"
+            }
+          }
+          document.body.querySelector('.navbar-brand').style.color = 'black'
+          document.body.querySelector('header').style.backgroundColor = 'white'
           this.verify = 0
         }
-      }
     }
   },
 
@@ -161,9 +186,9 @@ h2,h3,p, td, footer, #quotes{
   text-align: center;
   margin: 35px 0 10px 12px;
   outline: 0;
-  background-color: white;
+  background-color: var(--currency);
   border: .5px solid var(--currency);
-  color: var(--currency);
+  color: white;
 }
 
 .coins{

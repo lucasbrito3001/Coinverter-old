@@ -2,7 +2,7 @@
     <header>
         <nav class="navbar navbar-expand-lg navbar-light">
             <a class="navbar-brand" href="#"><img src="../assets/brand.svg" alt="brand-coinverser"> <span id="brand-text">Coinverter</span></a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapsible">
+            <button type="button" id="navheader-toggler" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapsible">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div id="navbarCollapsible" class="collapse navbar-collapse">
@@ -25,6 +25,11 @@
 
 <script>
 export default {
+    data(){
+        return{
+            event: 'off'
+        }
+    },
     methods: {
         darkmode(){
             const alternate = document.querySelector('.alternate')
@@ -60,7 +65,6 @@ header{
     background: white;
     width: 100%;
     z-index: 100;
-    padding: 0 10px;
 }
 
 .navbar{
@@ -72,8 +76,13 @@ header{
     font-size: 1.15rem;
 }
 
+.nav-link{
+    color: rgba(0,0,0,.65);
+}
+
 .navbar-brand {
     font-size: 1.15rem;
+    color: black;
 }
 
 
@@ -98,13 +107,17 @@ header{
     padding: 0px;
     position: relative;
     display: inline-block;
-    width: 65px;
-    height: 25px;
+    width: 55px;
+    height: 22px;
     background-color: red;
     border-radius: 7px;
     border: 2px solid red;
     color: white;
-    line-height: 20px;
+    line-height: 17px;
+}
+
+.text{
+    font-size: .9rem;
 }
 
 .alternate{

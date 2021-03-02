@@ -134,6 +134,6 @@ div{
 }
 
 #exchanges a{
-    color: var(--neutralText);
+    color: white;
 }
 </style>
