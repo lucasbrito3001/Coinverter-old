@@ -71,6 +71,22 @@ export default {
     }
   },
 
+  methods: {
+    methods: {
+      darkmode(){
+        if(this.verify == 0){
+          document.body.style.setProperty('--neutralText','white')
+          document.body.style.backgroundColor = 'rgb(0,0,22)'
+          this.verify = 1
+        } else{
+          document.body.style.setProperty('--neutralText','black')
+          document.body.style.backgroundColor = 'white'
+          this.verify = 0
+        }
+      }
+    }
+  },
+
   components: {
     Header,
     ExchangeRate,
