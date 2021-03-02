@@ -52,9 +52,8 @@
 </template>
 
 <script>
-
-import Converter from "./components/Converter.vue"
 import Header from "./components/Header.vue"
+import Converter from "./components/Converter.vue"
 import ExchangeRate from "./components/ExchangeRate.vue"
 import Button from "./components/Button.vue"
 import CurrencyTable from "./components/CurrencyTable.vue"

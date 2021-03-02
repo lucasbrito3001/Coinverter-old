@@ -156,7 +156,6 @@ export default {
 
                 this.datas.push(coinObject)
             } 
-            console.log(this.datas)  
         } catch (error) {
             console.log('[ERRO]')
         }
