@@ -23,6 +23,7 @@ button{
 .btn-primary{
     border: none;
     margin: 10px;
+    padding: 1px 4px;
     border-radius: 5px;
 }
 </style>
