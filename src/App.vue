@@ -12,25 +12,16 @@
         <ExchangeRate moeda-a = "BRL" moeda-b = "CHF"/>
         <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#coinCaption" id="buttonCaption">Legenda das Moedas</button>
         <ul class="collapse navbar-collapse" id="coinCaption">
-          <li class="col-6 col-lg-2"><span class="coins">USD</span> : Dólar Comercial</li>
-          <li class="col-6 col-lg-2"><span class="coins">CAD</span> : Dólar Canadense</li>
-          <li class="col-6 col-lg-2"><span class="coins">EUR</span> : Euro</li>
-          <li class="col-6 col-lg-2"><span class="coins">BTC</span> : BitCoin</li>
-          <li class="col-6 col-lg-2"><span class="coins">GBP</span> : Libra Esterlina</li>
-          <li class="col-6 col-lg-2"><span class="coins">CHF</span> : Franco Suíço</li>
+          <li class="col-6 col-lg-2"><abbr title="Dólar Comercial"><span class="coins">USD</span> : Dólar Comercial</abbr></li>
+          <li class="col-6 col-lg-2"><abbr title="Dólar Canadense"><span class="coins">CAD</span> : Dólar Canadense</abbr></li>
+          <li class="col-6 col-lg-2"><abbr title="Euro"><span class="coins">EUR</span> : Euro</abbr></li>
+          <li class="col-6 col-lg-2"><abbr title="Bitcoin"><span class="coins">BTC</span> : Bitcoin</abbr></li>
+          <li class="col-6 col-lg-2"><abbr title="Libra Esterlina"><span class="coins">GBP</span> : Libra Esterlina</abbr></li>
+          <li class="col-6 col-lg-2"><abbr title="Franco Suiço"><span class="coins">CHF</span> : Franco Suíço</abbr></li>
         </ul>
       </section>
-      <section class="row" id="coinsConverter">
-        <Converter moeda-a = "BRL" v-bind:moeda-c="moeda" moeda-a_value = "1" moeda-c_value = "0" input-moeda-a = ""/>
-      </section>
-      <section class="row" id="buttons">
-        <h3 class="col-12">Mais Opções de Conversão</h3>
-        <Button moeda = "USD" @change="moeda = 'USD'"></Button>
-        <Button moeda = "EUR" @change="moeda = 'EUR'"></Button>
-        <Button moeda = "BTC" @change="moeda = 'BTC'"></Button>
-        <Button moeda = "CAD" @change="moeda = 'CAD'"></Button>
-        <Button moeda = "CHF" @change="moeda = 'CHF'"></Button>
-        <Button moeda = "GBP" @change="moeda = 'GBP'"></Button>
+      <section class="row" id="newConverter">
+        <NewConverter/>
       </section>
     </main>
     <aside class="container">
@@ -40,9 +31,6 @@
       <section class="row" id="aboutConverter">
         <AboutConverter/>
       </section>
-      <!-- <section id="news">
-        <News/>
-      </section> -->
       <section id="aboutBitcoin">
         <AboutBitcoin/>
       </section>
@@ -54,13 +42,11 @@
 <script>
 import Header from "./components/Header.vue"
 import ExchangeRate from "./components/ExchangeRate.vue"
-import Button from "./components/Button.vue"
-import Converter from "./components/Converter.vue"
 import CurrencyTable from "./components/CurrencyTable.vue"
 import AboutConverter from "./components/AboutConverter.vue"
-// import News from "./components/News.vue"
 import AboutBitcoin from "./components/AboutBitcoin.vue"
 import Footer from "./components/Footer.vue"
+import NewConverter from "./components/NewConverter.vue"
 
 export default {
   name: 'App',
@@ -115,13 +101,11 @@ export default {
   components: {
     Header,
     ExchangeRate,
-    Converter,
-    Button,
     CurrencyTable,
     AboutConverter,
-    // News,
     AboutBitcoin,
-    Footer
+    Footer,
+    NewConverter
   }
 }
 </script>
@@ -216,6 +200,10 @@ h2,h3,p, td, footer, #quotes{
 #table{
   box-sizing: border-box;
   padding: 0;
+}
+
+abbr{
+  text-decoration-line: none;
 }
 
 @media (max-width:992px) {
