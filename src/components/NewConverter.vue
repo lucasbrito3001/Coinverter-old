@@ -1,15 +1,17 @@
 <template>
     <div class="converter">
-        <img src="require(../assets/)" alt="">
+        <header>
+            <img src="../assets/USD.png" alt="flag-country">
+        </header>
         <div class="selectCurrencies">
-            <select id="originalCurrency">
-                <option value="BRL">Real</option>
-                <option value="USD" selected>Dólar Americano</option>
-                <option value="EUR">Euro</option>
-                <option value="CAD">Dólar Canadense</option>
-                <option value="BTC">Bitcoin</option>
-                <option value="GBP">Libra Esterlina</option>
-                <option value="CHF">Franco Suíço</option>
+            <select id="originalCurrency" @change="toBRL">
+                <option value="0">Real</option>
+                <option value="1" selected>Dólar Americano</option>
+                <option value="2">Euro</option>
+                <option value="3">Dólar Canadense</option>
+                <option value="4">Bitcoin</option>
+                <option value="5">Libra Esterlina</option>
+                <option value="6">Franco Suíço</option>
             </select>
             <div id="switchCurrencies">
                 <picture>
@@ -17,27 +19,81 @@
                     <img src="../assets/switchVertical.svg" alt="switch-icon">
                 </picture>
             </div>
-            <select id="convertedCurrency">
-                <option value="BRL" selected>Real</option>
-                <option value="USD">Dólar Americano</option>
-                <option value="EUR">Euro</option>
-                <option value="CAD">Dólar Canadense</option>
-                <option value="BTC">Bitcoin</option>
-                <option value="GBP">Libra Esterlina</option>
-                <option value="CHF">Franco Suíço</option>
+            <select id="convertedCurrency" @change="toBRL">
+                <option value="0" selected>Real</option>
+                <option value="1">Dólar Americano</option>
+                <option value="2">Euro</option>
+                <option value="3">Dólar Canadense</option>
+                <option value="4">Bitcoin</option>
+                <option value="5">Libra Esterlina</option>
+                <option value="6">Franco Suíço</option>
             </select>
         </div>
         <div class="conversionResult">
-            <input type="number" id="inputOriginalCurrency">
+            <input @change="directCalc" type="text" id="inputOriginalCurrency" v-model="originalCurrency">
             <span>Vale:</span>
-            <input type="number" id="inputConvertedCurrency">
+            <input @change="inverseCalc" type="text" id="inputConvertedCurrency" v-model="convertedCurrency">
         </div>
     </div>    
 </template>
 
 <script>
 export default {
-    
+    props: {
+        dataAPI: {
+            type: Array,
+        }
+    },
+
+    data(){
+        return{
+            arrayBidResponse : this.dataAPI,
+            originalCurrency: 1,
+            convertedCurrency: '',
+            multiplier: ''
+        }
+    },
+
+    mounted(){
+        setTimeout(()=>{
+            this.toBRL()
+        },1000)
+        
+        this.updateToBRL()
+    },
+
+    methods: {
+        toBRL(){
+            let selectOriginalCurrency = document.querySelector('#originalCurrency')
+            let valueSelectOriginal = selectOriginalCurrency.value
+            let selectConvertedCurrency = document.querySelector('#convertedCurrency')
+            let valueSelectConverted = selectConvertedCurrency.value
+
+            this.multiplier = this.arrayBidResponse[valueSelectOriginal] / this.arrayBidResponse[valueSelectConverted]
+
+            this.directCalc()
+            this.inverseCalc()
+            
+        },
+
+        directCalc(){
+            const calcDirect = (this.multiplier * this.originalCurrency).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+
+            this.convertedCurrency = calcDirect
+        },
+
+        inverseCalc(){
+            const calcInverse = (this.convertedCurrency / this.multiplier).toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ".")
+
+            this.originalCurrency = calcInverse
+        },
+        
+        updateToBRL(){
+            setInterval( () => {
+                this.toBRL()
+            },30000)
+        }
+    }
 }
 </script>
 

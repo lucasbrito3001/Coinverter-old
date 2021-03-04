@@ -21,7 +21,7 @@
         </ul>
       </section>
       <section class="row" id="newConverter">
-        <NewConverter/>
+        <NewConverter :dataAPI="dataResponseInfos" />
       </section>
     </main>
     <aside class="container">
@@ -54,8 +54,15 @@ export default {
   data(){
     return {
       moeda: "USD",
-      verify: 0
+      verify: 0,
+      dataResponseInfos: [1,],
+      arrayWithCurrencies: ["USD", "EUR", "CAD", "BTC", "GBP", "CHF"],
     }
+  },
+
+  created(){
+    this.requestAPI()  
+    this.updateValuesAPI() 
   },
 
   methods: {
@@ -95,6 +102,26 @@ export default {
           document.body.querySelector('header').style.backgroundColor = 'white'
           this.verify = 0
         }
+    },
+
+    async requestAPI(){
+      try {
+        const response = await fetch("https://economia.awesomeapi.com.br/json/all")
+        const data = await response.json()
+        for(let index in this.arrayWithCurrencies){
+          let currency = this.arrayWithCurrencies[index]
+          this.dataResponseInfos.push(data[currency].bid)
+        }
+        // console.log(this.dataResponseInfos)
+      } catch (error) {
+        console.error(this.response.status(204).json())
+      }
+    },
+
+    updateValuesAPI(){
+      setInterval( () =>  {
+        this.requestAPI()
+      },30000)
     }
   },
 
